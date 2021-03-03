@@ -14,7 +14,7 @@ function null_check($value) {
 function insert_values($table, $vars, $values) {
 
     //Create $conn connection to MySQL database
-    include_once('connect_sql.php');
+    include('connect_sql.php');
 
 	$query = 'INSERT INTO master_tracker.' . $table . ' ';
 
@@ -42,9 +42,9 @@ function insert_values($table, $vars, $values) {
 
     //Run query
 	if ($conn->query($query) === TRUE) {
-	  console.log('New record created successfully.');
+	  echo 'New record created successfully.';
 	} else {
-	  console.log('Error: ' . $query . '<br>' . $conn->error);
+	  echo 'Error: ' . $query . '<br>' . $conn->error;
 	}
 
     //Close connection to MySQL database
@@ -52,4 +52,3 @@ function insert_values($table, $vars, $values) {
 }
 
 // EOF
-

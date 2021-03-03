@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include_once('header.php')
 ?>
   <head>
@@ -10,7 +10,7 @@ include_once('header.php')
       <h1>Create a New Exercise:</h1>
     </nav>
 
-    <form autocomplete="off" action="create_new.php" method="post">
+    <form autocomplete="off" action="connect_exercise_muscle.php" method="post">
       <div class="container">
         
         <div id="row">

@@ -1,7 +1,7 @@
 CREATE TABLE master_tracker.exercise_muscle (
 	exercise_id smallint,
 	muscle_id smallint,
-	emphasis tinyint(1),
+	emphasis tinyint(1) DEFAULT 0,
 	CONSTRAINT exercise_muscle_pkey
 		PRIMARY KEY (exercise_id, muscle_id),
 	CONSTRAINT exercise_muscle_exercise_id_fkey 

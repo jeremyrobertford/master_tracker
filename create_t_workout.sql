@@ -3,7 +3,7 @@ CREATE TABLE master_tracker.workout (
 	name varchar(100) NOT NULL,
 	difficulty varchar(12) NOT NULL,
 	area_focus char(5) NOT NULL,
-	part_focus char(4) NOT NULL,
+	part_focus varchar(8) NOT NULL,
 	func_focus varchar(15) NOT NULL,
 	plane_focus varchar(10) NOT NULL,
 	notes varchar(255),

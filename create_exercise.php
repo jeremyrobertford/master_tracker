@@ -13,11 +13,11 @@ include_once('header.php')
     <form autocomplete="off" action="connect_exercise_muscle.php" method="post">
       <div class="container">
         
-        <div id="row">
+        <div class="row">
           <label class="col-12">Exercise</label>
           <input class="col-12" type="text" name="exercise" />
         </div>
-        <div id="row">
+        <div class="row">
           <label class="col-12">Difficulty</label>
           <select class="col-12" name="difficulty">
             <option value="NULL">Select a difficulty</option>
@@ -26,7 +26,7 @@ include_once('header.php')
             <option value="Advanced">Advanced</option>
           </select>
         </div>
-        <div id="row">
+        <div class="row">
           <label class="col-12">Primary Function</label>
           <select class="col-12" name="primary_func">
             <option value="NULL">Select a function</option>
@@ -37,7 +37,7 @@ include_once('header.php')
             <option value="Pull">Twist</option>
           </select>
         </div>
-        <div id="row">
+        <div class="row">
           <label class="col-12">Primary Plane</label>
           <select class="col-12" name="primary_plane">
             <option value="NULL">Select a plane</option>
@@ -46,7 +46,7 @@ include_once('header.php')
             <option value="Both">Both</option>
           </select>
         </div>
-        <div id="row">
+        <div class="row">
           <label class="col-12">Notes</label>
           <textarea class="col-12" name="notes" rows=5 cols=50></textarea>
         </div>

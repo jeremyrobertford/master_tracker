@@ -5,6 +5,7 @@ CREATE TABLE master_tracker.workout_exercise (
 	reps         tinyint NOT NULL,
 	rest         tinyint NOT NULL,
 	reason       varchar(50) NOT NULL,
+	notes        varchar(255),
 	CONSTRAINT workout_exercise_pkey
 		PRIMARY KEY (workout_id, exercise_id),
 	CONSTRAINT workout_exercise_workout_id_fkey 

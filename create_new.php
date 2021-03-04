@@ -59,6 +59,62 @@ function choose_table() {
 			insert_values($_POST['table'], $vars, $values);
 		}
 
+    //Create a new workout
+	} elseif ($_POST['table'] == 'workout') {
+		$vars = array(
+			'name', 
+			'difficulty', 
+			'area_focus', 
+			'part_focus', 
+			'func_focus', 
+			'plane_focus', 
+			'notes'
+		);
+		$values = array(
+			$_POST['name'], 
+			$_POST['difficulty'],
+			$_POST['area_focus'],
+			$_POST['part_focus'],
+			$_POST['func_focus'],
+			$_POST['plane_focus'],
+			$_POST['notes']
+		);
+		insert_values($_POST['table'], $vars, $values);
+
+		include('connect_sql.php');
+		$sql = 'SELECT ID FROM master_tracker.workout';
+		$sql = $sql . ' WHERE name="' . $_POST['name'] . '"';
+
+		$result = $conn->query($sql);
+		$row = $result->fetch_assoc();
+		$workout_id = $row['ID'];
+		$conn->close();
+
+        //Connect a workout to the exercises it uses
+		$_POST['table'] = 'workout_exercise';
+		$vars = array(
+			'workout_id',
+			'exercise_id',
+			'sets',
+			'reps',
+			'rest',
+			'reason',
+			'notes'
+		);
+		$num_exercises = count($_POST['exercise_list']);
+		for ($i = 0; $i < $num_exercises; $i++) {
+			$values = array(
+				$workout_id,
+				$_POST['exercise_list'][$i],
+				$_POST['sets_list'][$i],
+				$_POST['reps_list'][$i],
+				$_POST['rest_list'][$i],
+				$_POST['reason_list'][$i],
+				$_POST['notes_list'][$i]
+			);
+			insert_values($_POST['table'], $vars, $values);
+		}
+
 	}
 
 }

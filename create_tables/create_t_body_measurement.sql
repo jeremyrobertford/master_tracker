@@ -28,10 +28,10 @@ CREATE TABLE master_tracker.body_measurement (
 	gr_thighs         decimal(4,3)
 		GENERATED ALWAYS AS (((flexed_l_thigh+flexed_r_thigh)/2)/ ((l_knee+r_knee)/2)) STORED,
 	gr_calves         decimal(4,3)
-		GENERATED ALWAYS AS (((flexed_l_calve+flexed_r_calve)/2)/ ((l_arm+r_arm)/2)) STORED,
+		GENERATED ALWAYS AS (((flexed_l_calve+flexed_r_calve)/2)/ ((flexed_l_arm+flexed_r_arm)/2)) STORED,
 	arm_balance      decimal(4,3)
 		GENERATED ALWAYS AS (flexed_l_arm/flexed_r_arm) STORED,
-	arm_balance      decimal(4,3)
+	forearm_balance      decimal(4,3)
 		GENERATED ALWAYS AS (l_forearm/r_forearm) STORED,
 	thigh_balance      decimal(4,3)
 		GENERATED ALWAYS AS (flexed_l_thigh/flexed_r_thigh) STORED,
